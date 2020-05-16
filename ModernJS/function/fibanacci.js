@@ -19,9 +19,9 @@ let fibonacci = (len) => {
         num1 = num2
         num2 = toPush
     }    
-    console.log(arr)
+    return arr
 }
-fibonacci(10)
+console.log(fibonacci(10))
 
 
 // other way
@@ -33,6 +33,7 @@ let fibSeq = (len) => {
     for (let i = 2; i < len; i++){
         seq[i] = seq[i-1] + seq[i-2]
     }
-    console.log(seq)
+    return seq
 }
-fibSeq(7)
+console.log(fibSeq(7))
+
