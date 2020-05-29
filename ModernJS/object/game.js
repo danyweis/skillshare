@@ -4,7 +4,7 @@ prototype default values
 speed : 6
 strength : 8
 hitpoints : 150 
-mathode to determane damage per sec and returns it => speed * strength 
+method to determine damage per sec and returns it => speed * strength 
 */
 
 // CLASS DEF
