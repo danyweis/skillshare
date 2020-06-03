@@ -9,6 +9,7 @@
     display: inline-block;
 }
 
-.submitted {
-    background-color: #1e90ff;
+progress {
+    -webkit-appearance: none;
+    appearance: none;
 }
