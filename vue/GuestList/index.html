@@ -13,17 +13,36 @@
   <link rel="stylesheet" href="app.css">
 </head>
 <body>
+  <div class="container">
+
+<div id="navigation">
+
+  <div class="row">
+    <div class="col-sm-12 text-center">
+      <h1> {{ appName }} </h1>
+    </div>
+  </div>
+  <hr>
+
+  <div>
+    <ul class="nav">
+      <div v-for="link in navLinks" :key="link.id">
+        <li class="nav-item">
+          <a class="nav-link" :href="link.url" target="_blank">
+            {{ link.name }}
+          </a>
+        </li>
+      </div>
+    </ul>
+  </div>
+<hr>
+<button class="btn btn-danger" @click="changeCapacity" >Click to test change capacity from other instance</button>
+</div>
 
   <div id="app">
-    <div class="container">
 
-      <div class="row" :style="appStyle">
-        <div class="col-sm-12 text-center">
-          <h1>Guest List</h1>
-        </div>
-      </div>
 
-      <div class="row" :style="appStyle">
+      <div class="row">
         <div class="col-sm-12">
           <div class="card">
             <div class="card-header">
@@ -44,7 +63,7 @@
         </div>
       </div>
 
-      <div class="row" :style="appStyle">
+      <div class="row">
         <div class="col-sm-12">
           <div class="card">
             <div class="card-header">
@@ -55,9 +74,9 @@
             <div class="card-block">
               <div v-if="guestName.length > 0">
                 <div class="card-success rounded name-box"
-                v-for="name in guestName"
+                v-for="(name, index) in sortNames" :key="name"
                 >
-                {{ name}}
+                {{ name | formatName }} ({{ index + 1 }})
                 <!-- {{ Math.floor(Math.random()*6) }} -->
                 </div>
               </div>

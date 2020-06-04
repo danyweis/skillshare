@@ -1,7 +1,6 @@
-/* .row {
-    IS CHANGED WITH VUE => V-BIND:STYLE 
-    margin-top: 25px; 
-} */
+.row {
+    margin-top: 25px;
+}
 
 .name-box {
     padding: 10px;
