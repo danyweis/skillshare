@@ -1,18 +1,22 @@
 <template>
   <div id="app">
     <TheNavigation />
-    <router-view />
+    <!-- <transition name="slide" mode="out-in"> -->
+    <!-- <transition name="moveUp"> -->
+    <transition name="fade">
+      <router-view :key="$route.path" />
+    </transition>
   </div>
 </template>
 
 <script>
-import TheNavigation from "@/components/TheNavigation.vue"
+import TheNavigation from "@/components/TheNavigation.vue";
 
 export default {
   components: {
-    TheNavigation,
-  },
-}
+    TheNavigation
+  }
+};
 </script>
 
 <style>
@@ -23,4 +27,52 @@ export default {
   text-align: center;
   color: #2c3e50;
 }
+/* FADE */
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.3s;
+}
+
+.fade-enter,
+.fade-leave {
+  opacity: 0;
+}
+
+/* SLIDE */
+/* .slide-enter-active,
+.slide-leave-active {
+  transition: opacity 0.5s, transform 0.5s;
+}
+
+.slide-enter,
+.slide-leave-to {
+  opacity: 0;
+  transform: translateX(-30%);
+} */
+/* MOVE UP */
+/* .moveUp-enter-active {
+  animation: fadeIn 1s ease-in;
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.moveUp-leave-active {
+  animation: moveUp 0.3s ease-in;
+}
+@keyframes moveUp {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-400px);
+  }
+} */
 </style>
