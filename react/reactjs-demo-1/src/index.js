@@ -4,6 +4,9 @@ import AppHeader from "./AppHeader";
 import AppFooter from "./AppFooter";
 import AppContent from "./AppContent";
 import "./index.css";
+import "bootstrap/dist/css/bootstrap.css";
+import Counter from "./Counter";
+import Uncontrolled from "./Uncontrolled";
 
 class App extends Component {
   render() {
@@ -18,6 +21,10 @@ class App extends Component {
         <AppHeader title="Address book App " subheading="Created by Dan" />
         <AppContent />
         {/*Two ways of doing this*/}
+
+        <Counter />
+        <Uncontrolled />
+
         <AppFooter {...footerProps} />
         {/* <AppFooter
           website={footerProps.website}
