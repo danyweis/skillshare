@@ -7,6 +7,7 @@ import "./index.css";
 import "bootstrap/dist/css/bootstrap.css";
 import Counter from "./Counter";
 import Uncontrolled from "./Uncontrolled";
+import Controlled from "./Controlled";
 
 class App extends Component {
   render() {
@@ -24,6 +25,7 @@ class App extends Component {
 
         <Counter />
         <Uncontrolled />
+        <Controlled />
 
         <AppFooter {...footerProps} />
         {/* <AppFooter

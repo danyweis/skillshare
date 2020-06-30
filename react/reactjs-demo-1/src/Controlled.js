@@ -1,17 +1,15 @@
 import React, { Component } from "react";
-import ContactForm from "./ContactForm";
+import ControlledContactForm from "./ControlledContactForm";
 
-class Uncontrolled extends Component {
+class Controlled extends Component {
   state = {};
   render() {
     return (
       <div className="container">
-        <h3 className="alert alert-danger">
-          Using "refs" (Uncontrolled Components)
-        </h3>
+        <h3 className="alert alert-success">Controlled Component</h3>
         <div className="row">
           <div className="col">
-            <ContactForm />
+            <ControlledContactForm />
           </div>
           <div className="col"></div>
         </div>
@@ -20,4 +18,4 @@ class Uncontrolled extends Component {
   }
 }
 
-export default Uncontrolled;
+export default Controlled;

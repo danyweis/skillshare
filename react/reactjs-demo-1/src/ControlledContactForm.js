@@ -1,21 +1,17 @@
 import React, { Component } from "react";
 
-class ContactForm extends Component {
-  addNewContact = (event) => {
-    console.log("Adding a new Contact");
-    const name = this.refs.name.value;
-    const email = this.refs.email.value;
-    const phone = this.refs.phone.value;
-    const pic = this.refs.pic.value;
+class ControlledContactForm extends Component {
+  state = {
+    name: "",
+    email: "",
+    phone: "",
+    pic: "",
+  };
 
-    const p1 = { name, email, phone, pic };
-    console.log(p1);
-
-    this.refs.name.value = "";
-    this.refs.email.value = "";
-    this.refs.phone.value = "";
-    this.refs.pic.value = "";
-    event.preventDefault();
+  evHandler = (evt) => {
+    let name = evt.target.name;
+    let value = evt.target.value;
+    console.log(name, value);
   };
 
   render() {
@@ -29,9 +25,10 @@ class ContactForm extends Component {
             </label>
             <div className="col-md-8">
               <input
-                ref="name"
+                value={this.state.name}
+                onChange={this.evHandler}
+                name="name"
                 type="text"
-                name=""
                 id=""
                 className="form-control"
               />
@@ -43,9 +40,10 @@ class ContactForm extends Component {
             </label>
             <div className="col-md-8">
               <input
-                ref="email"
+                value={this.state.email}
+                onChange={this.evHandler}
+                name="email"
                 type="text"
-                name=""
                 id=""
                 className="form-control"
               />
@@ -57,9 +55,10 @@ class ContactForm extends Component {
             </label>
             <div className="col-md-8">
               <input
-                ref="phone"
+                value={this.state.phone}
+                onChange={this.evHandler}
+                name="phone"
                 type="text"
-                name=""
                 id=""
                 className="form-control"
               />
@@ -71,9 +70,10 @@ class ContactForm extends Component {
             </label>
             <div className="col-md-8">
               <input
-                ref="pic"
+                value={this.state.pic}
+                onChange={this.evHandler}
+                name="pic"
                 type="text"
-                name=""
                 id=""
                 className="form-control"
               />
@@ -86,4 +86,4 @@ class ContactForm extends Component {
   }
 }
 
-export default ContactForm;
+export default ControlledContactForm;
