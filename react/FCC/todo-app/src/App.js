@@ -6,7 +6,7 @@ function App() {
   const hours = date.getHours();
   let timeOfDay;
   const styles = {
-    fontSize: 24,
+    fontSize: 35,
   };
 
   if (hours < 12) {
@@ -21,24 +21,18 @@ function App() {
   }
 
   return (
-    <div className="container">
-      <div className="row">
-        <div className="offset-sm-3 col-sm-6">
-          <h2 style={styles} className="text-center alert alert-info">
-            Good {timeOfDay}, what you need todo today
-          </h2>
-          <TodoItem />
-          {/* <input type="checkbox" name="" id="" />
-          <p>Walk the dog</p>
-          <hr />
-          <input type="checkbox" name="" id="" />
-          <p>Go run</p>
-          <hr />
-          <input type="checkbox" name="" id="" />
-          <p>Prepare Food</p>
-          <hr />
-          <input type="checkbox" name="" id="" />
-          <p>Build a Todo App</p> */}
+    <div>
+      <h2 style={styles} className="text-center todoHeader">
+        Good {timeOfDay}, what you need todo today
+      </h2>
+      <div className="container">
+        <div className="row">
+          <div className="offset-sm-3 col-sm-6">
+            <TodoItem />
+            <TodoItem />
+            <TodoItem />
+            <TodoItem />
+          </div>
         </div>
       </div>
     </div>

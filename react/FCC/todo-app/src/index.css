@@ -11,11 +11,20 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+.todoHeader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100px;
+  background: rgb(100, 31, 31);
+}
 
 .todoBox {
   padding: 15px;
+  margin-bottom: 10px;
   display: flex;
-  /* justify-content: space-evenly; */
+  border: 1px solid black;
+  border-radius: 3px;
 }
 .todoBox input {
   margin-right: 15px;
